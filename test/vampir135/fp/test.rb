@@ -14,12 +14,13 @@ class Vampir135::FpTest < Minitest::Test
 
   # Посчитать количесвто букв 'и' в названиях всех фильмов с рейтингом кинопоиска больше или равным заданному значению
   def test_chars_count
+    skip
     array = CSV.readlines('./test/fixtures/films.csv', headers: true)
 
-    # result = Vampir135::Fp.chars_count(array, 5)
-    # assert result == 891
+    result = Vampir135::Fp.chars_count(array, 5)
+    assert result == 891
 
     result = Vampir135::Fp.chars_count(array, 8.5)
-    # assert result == 1
+    assert result == 1
   end
 end
